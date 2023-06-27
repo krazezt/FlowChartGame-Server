@@ -3,10 +3,10 @@ import { DTO_ValidateMaxAB } from './DTOs';
 
 @Injectable()
 export class GameplayService {
-  validateMaxAB(dto: DTO_ValidateMaxAB) {
-    const max = dto.key1 > dto.key2 ? dto.key1 : dto.key2;
+  validateMaxAB(key1: number, key2: number, key3: number) {
+    const max = key1 > key2 ? key1 : key2;
 
-    if (dto.key3 === max) return true;
+    if (key3 === max) return true;
     else return false;
   }
 }

@@ -8,6 +8,10 @@ export class GameplayController {
 
   @Post('validate/max-ab')
   validateMaxAB(@Body() dto: DTO_ValidateMaxAB) {
-    return this.service.validateMaxAB(dto);
+    return this.service.validateMaxAB(
+      parseInt(dto.key1),
+      parseInt(dto.key2),
+      parseInt(dto.key3),
+    );
   }
 }

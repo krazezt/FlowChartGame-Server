@@ -1,17 +1,17 @@
-import { IsNotEmpty, IsNumber } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 class DTO_ValidateMaxAB {
   @IsNotEmpty()
-  @IsNumber()
-  key1: number;
+  @IsString()
+  key1: string;
 
   @IsNotEmpty()
-  @IsNumber()
-  key2: number;
+  @IsString()
+  key2: string;
 
   @IsNotEmpty()
-  @IsNumber()
-  key3: number;
+  @IsString()
+  key3: string;
 }
 
 export { DTO_ValidateMaxAB };
