@@ -14,4 +14,18 @@ class DTO_ValidateMaxAB {
   key3: string;
 }
 
-export { DTO_ValidateMaxAB };
+class DTO_ValidateUCLNAB {
+  @IsNotEmpty()
+  @IsString()
+  key1: string;
+
+  @IsNotEmpty()
+  @IsString()
+  key2: string;
+
+  @IsNotEmpty()
+  @IsString()
+  key3: string;
+}
+
+export { DTO_ValidateMaxAB, DTO_ValidateUCLNAB };
