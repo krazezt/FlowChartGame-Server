@@ -28,4 +28,8 @@ class DTO_ValidateUCLNAB {
   key3: string;
 }
 
-export { DTO_ValidateMaxAB, DTO_ValidateUCLNAB };
+class RandomLevelDTO {
+  except: string;
+}
+
+export { DTO_ValidateMaxAB, DTO_ValidateUCLNAB, RandomLevelDTO };

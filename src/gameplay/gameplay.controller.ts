@@ -1,10 +1,15 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { GameplayService } from './gameplay.service';
-import { DTO_ValidateMaxAB, DTO_ValidateUCLNAB } from './DTOs';
+import { DTO_ValidateMaxAB, DTO_ValidateUCLNAB, RandomLevelDTO } from './DTOs';
 
 @Controller('gameplay')
 export class GameplayController {
   constructor(private service: GameplayService) {}
+
+  @Post('data/get-random-level')
+  getRandomLevel(@Body() dto: RandomLevelDTO) {
+    return this.service.getRandomLevel(dto.except ? parseInt(dto.except) : -1);
+  }
 
   @Post('validate/max-ab')
   validateMaxAB(@Body() dto: DTO_ValidateMaxAB) {

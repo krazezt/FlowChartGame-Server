@@ -1,7 +1,19 @@
 import { Injectable } from '@nestjs/common';
+import { levelsData } from './data/levels.data';
 
 @Injectable()
 export class GameplayService {
+  getRandomLevel(except: number) {
+    let index: number = this.getRandomInt(0, levelsData.length - 1);
+
+    if (except === -1) return levelsData[index];
+    else
+      while (index === except)
+        index = this.getRandomInt(0, levelsData.length - 1);
+
+    return levelsData[index];
+  }
+
   validateMaxAB(key1: number, key2: number, key3: number) {
     const max = key1 > key2 ? key1 : key2;
 
@@ -22,5 +34,9 @@ export class GameplayService {
 
     if (key3 === ucln) return true;
     else return false;
+  }
+
+  getRandomInt(min: number, max: number) {
+    return min + Math.floor(Math.random() * (max + 1));
   }
 }
