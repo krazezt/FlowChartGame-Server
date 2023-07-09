@@ -1,4 +1,5 @@
 type LevelData = {
+  index: number;
   variables: { variableTypeID: number; variableName: string }[];
   functionBlocks: {
     id: number;
@@ -17,6 +18,7 @@ type LevelData = {
 // ======================================================================================================
 const levelsData: LevelData[] = [
   {
+    index: 0,
     variables: [
       {
         variableTypeID: 0,
@@ -77,6 +79,7 @@ const levelsData: LevelData[] = [
       'https://flow-chart-game-server.vercel.app/gameplay/validate/max-ab',
   },
   {
+    index: 1,
     variables: [
       {
         variableTypeID: 0,
