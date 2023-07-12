@@ -1,4 +1,5 @@
 type LevelData = {
+  request: string;
   index: number;
   variables: { variableTypeID: number; variableName: string }[];
   functionBlocks: {
@@ -18,6 +19,7 @@ type LevelData = {
 // ======================================================================================================
 const levelsData: LevelData[] = [
   {
+    request: "Cho hai số A và B, hãy tìm số lớn nhất trong hai số này và gán giá trị đó cho Max.",
     index: 0,
     variables: [
       {
@@ -79,6 +81,7 @@ const levelsData: LevelData[] = [
       'https://flow-chart-game-server.vercel.app/gameplay/validate/max-ab',
   },
   {
+    request: "Cho hai số A và B, hãy tìm ước chung lớn nhất của hai số này và gán giá trị đó cho UCLN.",
     index: 1,
     variables: [
       {
