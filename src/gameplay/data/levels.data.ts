@@ -212,7 +212,7 @@ const levelsData: LevelData[] = [
       },
       {
         id: 5,
-        blockTypeID: 5,
+        blockTypeID: 3,
         text: 'A < B',
         connectBlocks: [0, 1],
       },
