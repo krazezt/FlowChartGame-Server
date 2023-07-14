@@ -5,11 +5,11 @@ import { levelsData } from './data/levels.data';
 export class GameplayService {
   getRandomLevel(except: number) {
     let index: number = this.getRandomInt(0, levelsData.length - 1);
-
     if (except === -1) return levelsData[index];
     else
-      while (index === except)
+      while (index === except) {
         index = this.getRandomInt(0, levelsData.length - 1);
+      }
 
     return levelsData[index];
   }
@@ -18,6 +18,13 @@ export class GameplayService {
     const max = key1 > key2 ? key1 : key2;
 
     if (key3 === max) return true;
+    else return false;
+  }
+
+  validateMinAB(key1: number, key2: number, key3: number) {
+    const min = key1 < key2 ? key1 : key2;
+
+    if (key3 === min) return true;
     else return false;
   }
 

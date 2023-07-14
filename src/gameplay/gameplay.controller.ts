@@ -7,7 +7,9 @@ export class GameplayController {
   constructor(private service: GameplayService) {}
 
   @Post('data/get-random-level')
-  getRandomLevel(@Body() dto: RandomLevelDTO) {
+  getRandomLevel(@Body() dto: any) {
+    console.log("Body.except: " + dto.except);
+    
     return this.service.getRandomLevel(dto.except ? parseInt(dto.except) : -1);
   }
 
@@ -23,6 +25,15 @@ export class GameplayController {
   @Post('validate/ucln-ab')
   validateUCLNAB(@Body() dto: DTO_ValidateUCLNAB) {
     return this.service.validateUCLNAB(
+      parseInt(dto.key1),
+      parseInt(dto.key2),
+      parseInt(dto.key3),
+    );
+  }
+
+  @Post('validate/min-ab')
+  validateMinAB(@Body() dto: DTO_ValidateMaxAB) {
+    return this.service.validateMinAB(
       parseInt(dto.key1),
       parseInt(dto.key2),
       parseInt(dto.key3),
