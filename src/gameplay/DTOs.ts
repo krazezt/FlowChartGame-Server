@@ -28,8 +28,23 @@ class DTO_ValidateUCLNAB {
   key3: string;
 }
 
+class DTO_ValidateEqualAB {
+  @IsNotEmpty()
+  @IsString()
+  key1: string;
+
+  @IsNotEmpty()
+  @IsString()
+  key2: string;
+}
+
 class RandomLevelDTO {
   except: string;
 }
 
-export { DTO_ValidateMaxAB, DTO_ValidateUCLNAB, RandomLevelDTO };
+export {
+  DTO_ValidateMaxAB,
+  DTO_ValidateUCLNAB,
+  RandomLevelDTO,
+  DTO_ValidateEqualAB,
+};

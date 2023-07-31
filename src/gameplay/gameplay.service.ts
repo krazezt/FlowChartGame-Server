@@ -28,6 +28,10 @@ export class GameplayService {
     else return false;
   }
 
+  validateEqualAB(key1: number, key2: number) {
+    return key1 === key2;
+  }
+
   validateUCLNAB(key1: number, key2: number, key3: number) {
     const min = key1 < key2 ? key1 : key2;
     let ucln = 1;
