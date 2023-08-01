@@ -361,7 +361,12 @@ const levelsData: LevelData[] = [
       { id: 8, blockTypeID: 1, text: 'Max = B', connectBlocks: [3, 1] },
       { id: 9, blockTypeID: 1, text: 'Max = C', connectBlocks: [3, 2] },
       { id: 10, blockTypeID: 7, text: 'Xuất Max', connectBlocks: [] },
-      { id: 11, blockTypeID: 12, text: 'Kết thúc', connectBlocks: [3, 0, 1, 2] },
+      {
+        id: 11,
+        blockTypeID: 12,
+        text: 'Kết thúc',
+        connectBlocks: [3, 0, 1, 2],
+      },
     ],
     testCases: [
       {
