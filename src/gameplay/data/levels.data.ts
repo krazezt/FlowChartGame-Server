@@ -493,7 +493,7 @@ const levelsData: LevelData[] = [
   {
     request:
       'Cho hai số A và B, hãy tìm bội chung nhỏ nhất của hai số này và gán giá trị đó cho BCNN.',
-    index: 1,
+    index: 6,
     variables: [
       {
         variableTypeID: 0,
