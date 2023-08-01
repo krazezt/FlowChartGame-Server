@@ -490,6 +490,123 @@ const levelsData: LevelData[] = [
     validateURL:
       'https://flow-chart-game-server.vercel.app/gameplay/validate/min-abc',
   },
+  {
+    request:
+      'Cho hai số A và B, hãy tìm bội chung nhỏ nhất của hai số này và gán giá trị đó cho BCNN.',
+    index: 1,
+    variables: [
+      {
+        variableTypeID: 0,
+        variableName: 'A',
+      },
+      {
+        variableTypeID: 0,
+        variableName: 'B',
+      },
+      {
+        variableTypeID: 0,
+        variableName: 'UCLN',
+      },
+      {
+        variableTypeID: 0,
+        variableName: 'BCNN',
+      },
+    ],
+    functionBlocks: [
+      {
+        id: 3,
+        blockTypeID: 0,
+        text: 'Bắt đầu',
+        connectBlocks: [],
+      },
+      {
+        id: 4,
+        blockTypeID: 7,
+        text: 'Nhập A, B',
+        connectBlocks: [],
+      },
+      {
+        id: 5,
+        blockTypeID: 2,
+        text: 'A = B',
+        connectBlocks: [0, 1],
+      },
+      {
+        id: 6,
+        blockTypeID: 1,
+        text: 'UCLN = A',
+        connectBlocks: [2, 0],
+      },
+      {
+        id: 7,
+        blockTypeID: 5,
+        text: 'A > B',
+        connectBlocks: [0, 1],
+      },
+      {
+        id: 8,
+        blockTypeID: 9,
+        text: 'A = A - B',
+        connectBlocks: [0, 1, 0],
+      },
+      {
+        id: 9,
+        blockTypeID: 9,
+        text: 'B = B - A',
+        connectBlocks: [1, 0, 1],
+      },
+      {
+        id: 10,
+        blockTypeID: 10,
+        text: 'BCNN = A * B',
+        connectBlocks: [0, 1, 3],
+      },
+      {
+        id: 11,
+        blockTypeID: 11,
+        text: 'BCNN = BCNN/UCLN',
+        connectBlocks: [3, 2, 3],
+      },
+      {
+        id: 12,
+        blockTypeID: 12,
+        text: 'Kết thúc',
+        connectBlocks: [2, 0, 1],
+      },
+    ],
+    testCases: [
+      {
+        testCaseTypeID: 0,
+        text: 'A = 4\nB = 6',
+        casePairs: [
+          {
+            value: 4,
+            variableBlockIndex: 0,
+          },
+          {
+            value: 6,
+            variableBlockIndex: 1,
+          },
+        ],
+      },
+      {
+        testCaseTypeID: 0,
+        text: 'A = 12\nB = 15',
+        casePairs: [
+          {
+            value: 12,
+            variableBlockIndex: 0,
+          },
+          {
+            value: 15,
+            variableBlockIndex: 1,
+          },
+        ],
+      },
+    ],
+    validateURL:
+      'https://flow-chart-game-server.vercel.app/gameplay/validate/ucln-ab',
+  },
 ];
 
 export { levelsData, LevelData };
