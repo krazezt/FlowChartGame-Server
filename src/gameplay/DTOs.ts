@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsString } from 'class-validator';
 
-class DTO_ValidateMaxAB {
+class DTO_ValidateMaxMinAB {
   @IsNotEmpty()
   @IsString()
   key1: string;
@@ -14,7 +14,7 @@ class DTO_ValidateMaxAB {
   key3: string;
 }
 
-class DTO_ValidateMaxABC {
+class DTO_ValidateMaxMinABC {
   @IsNotEmpty()
   @IsString()
   key1: string;
@@ -61,8 +61,8 @@ class RandomLevelDTO {
 }
 
 export {
-  DTO_ValidateMaxAB,
-  DTO_ValidateMaxABC,
+  DTO_ValidateMaxMinAB,
+  DTO_ValidateMaxMinABC,
   DTO_ValidateUCLNAB,
   RandomLevelDTO,
   DTO_ValidateEqualAB,

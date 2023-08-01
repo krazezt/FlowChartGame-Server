@@ -2,8 +2,8 @@ import { Controller, Post, Body } from '@nestjs/common';
 import { GameplayService } from './gameplay.service';
 import {
   DTO_ValidateEqualAB,
-  DTO_ValidateMaxAB,
-  DTO_ValidateMaxABC,
+  DTO_ValidateMaxMinAB,
+  DTO_ValidateMaxMinABC,
   DTO_ValidateUCLNAB,
   RandomLevelDTO,
 } from './DTOs';
@@ -20,7 +20,7 @@ export class GameplayController {
   }
 
   @Post('validate/max-ab')
-  validateMaxAB(@Body() dto: DTO_ValidateMaxAB) {
+  validateMaxAB(@Body() dto: DTO_ValidateMaxMinAB) {
     return this.service.validateMaxAB(
       parseInt(dto.key1),
       parseInt(dto.key2),
@@ -29,7 +29,17 @@ export class GameplayController {
   }
 
   @Post('validate/max-abc')
-  validateMaxABC(@Body() dto: DTO_ValidateMaxABC) {
+  validateMaxABC(@Body() dto: DTO_ValidateMaxMinABC) {
+    return this.service.validateMaxABC(
+      parseInt(dto.key1),
+      parseInt(dto.key2),
+      parseInt(dto.key3),
+      parseInt(dto.key4),
+    );
+  }
+
+  @Post('validate/min-abc')
+  validateMinABC(@Body() dto: DTO_ValidateMaxMinABC) {
     return this.service.validateMaxABC(
       parseInt(dto.key1),
       parseInt(dto.key2),
@@ -48,7 +58,7 @@ export class GameplayController {
   }
 
   @Post('validate/min-ab')
-  validateMinAB(@Body() dto: DTO_ValidateMaxAB) {
+  validateMinAB(@Body() dto: DTO_ValidateMaxMinAB) {
     return this.service.validateMinAB(
       parseInt(dto.key1),
       parseInt(dto.key2),
