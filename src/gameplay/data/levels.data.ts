@@ -313,7 +313,7 @@ const levelsData: LevelData[] = [
   {
     request:
       'Cho ba số A, B và C, hãy tìm số lớn nhất trong ba số này và gán giá trị đó cho Max.',
-    index: 0,
+    index: 4,
     variables: [
       {
         variableTypeID: 0,
@@ -403,7 +403,7 @@ const levelsData: LevelData[] = [
   {
     request:
       'Cho ba số A, B và C, hãy tìm số nhỏ nhất trong ba số này và gán giá trị đó cho Min.',
-    index: 0,
+    index: 5,
     variables: [
       {
         variableTypeID: 0,
