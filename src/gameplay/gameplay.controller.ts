@@ -57,6 +57,15 @@ export class GameplayController {
     );
   }
 
+  @Post('validate/bcnn-ab')
+  validateBCNNAB(@Body() dto: DTO_ValidateUCLNAB) {
+    return this.service.validateUCLNAB(
+      parseInt(dto.key1),
+      parseInt(dto.key2),
+      parseInt(dto.key3),
+    );
+  }
+
   @Post('validate/min-ab')
   validateMinAB(@Body() dto: DTO_ValidateMaxMinAB) {
     return this.service.validateMinAB(

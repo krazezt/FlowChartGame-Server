@@ -63,6 +63,22 @@ export class GameplayService {
     else return false;
   }
 
+  validateBCNNAB(key1: number, key2: number, key3: number) {
+    const min = key1 < key2 ? key1 : key2;
+    let ucln = 1;
+
+    for (let i = min; i >= 1; i--) {
+      if (key1 % i < 0.5 && key2 % i < 0.5) {
+        ucln = i;
+        break;
+      }
+    }
+    let bcnn = Math.round((key1 * key2) / ucln);
+
+    if (key3 === bcnn) return true;
+    else return false;
+  }
+
   getRandomInt(min: number, max: number) {
     return min + Math.floor(Math.random() * (max + 1));
   }
