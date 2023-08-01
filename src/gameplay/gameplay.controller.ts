@@ -3,6 +3,7 @@ import { GameplayService } from './gameplay.service';
 import {
   DTO_ValidateEqualAB,
   DTO_ValidateMaxAB,
+  DTO_ValidateMaxABC,
   DTO_ValidateUCLNAB,
   RandomLevelDTO,
 } from './DTOs';
@@ -24,6 +25,16 @@ export class GameplayController {
       parseInt(dto.key1),
       parseInt(dto.key2),
       parseInt(dto.key3),
+    );
+  }
+
+  @Post('validate/max-abc')
+  validateMaxABC(@Body() dto: DTO_ValidateMaxABC) {
+    return this.service.validateMaxABC(
+      parseInt(dto.key1),
+      parseInt(dto.key2),
+      parseInt(dto.key3),
+      parseInt(dto.key4),
     );
   }
 

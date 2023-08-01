@@ -14,6 +14,24 @@ class DTO_ValidateMaxAB {
   key3: string;
 }
 
+class DTO_ValidateMaxABC {
+  @IsNotEmpty()
+  @IsString()
+  key1: string;
+
+  @IsNotEmpty()
+  @IsString()
+  key2: string;
+
+  @IsNotEmpty()
+  @IsString()
+  key3: string;
+
+  @IsNotEmpty()
+  @IsString()
+  key4: string;
+}
+
 class DTO_ValidateUCLNAB {
   @IsNotEmpty()
   @IsString()
@@ -44,6 +62,7 @@ class RandomLevelDTO {
 
 export {
   DTO_ValidateMaxAB,
+  DTO_ValidateMaxABC,
   DTO_ValidateUCLNAB,
   RandomLevelDTO,
   DTO_ValidateEqualAB,

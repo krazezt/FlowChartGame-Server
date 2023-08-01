@@ -21,6 +21,14 @@ export class GameplayService {
     else return false;
   }
 
+  validateMaxABC(key1: number, key2: number, key3: number, key4: number) {
+    const max =
+      key1 > key2 ? (key1 > key3 ? key1 : key3) : key2 > key3 ? key2 : key3;
+
+    if (key4 === max) return true;
+    else return false;
+  }
+
   validateMinAB(key1: number, key2: number, key3: number) {
     const min = key1 < key2 ? key1 : key2;
 

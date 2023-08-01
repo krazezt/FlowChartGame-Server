@@ -310,6 +310,91 @@ const levelsData: LevelData[] = [
     validateURL:
       'https://flow-chart-game-server.vercel.app/gameplay/validate/equal-ab',
   },
+  {
+    request:
+      'Cho ba số A, B và C, hãy tìm số lớn nhất trong ba số này và gán giá trị đó cho Max.',
+    index: 0,
+    variables: [
+      {
+        variableTypeID: 0,
+        variableName: 'A',
+      },
+      {
+        variableTypeID: 0,
+        variableName: 'B',
+      },
+      {
+        variableTypeID: 0,
+        variableName: 'C',
+      },
+      {
+        variableTypeID: 0,
+        variableName: 'Max',
+      },
+    ],
+    functionBlocks: [
+      {
+        id: 3,
+        blockTypeID: 0,
+        text: 'Bắt đầu',
+        connectBlocks: [],
+      },
+      {
+        id: 4,
+        blockTypeID: 7,
+        text: 'Nhập A, B, C',
+        connectBlocks: [],
+      },
+      {
+        id: 5,
+        blockTypeID: 5,
+        text: 'A > B',
+        connectBlocks: [0, 1],
+      },
+      {
+        id: 6,
+        blockTypeID: 5,
+        text: 'C > Max',
+        connectBlocks: [2, 3],
+      },
+      { id: 7, blockTypeID: 1, text: 'Max = A', connectBlocks: [3, 0] },
+      { id: 8, blockTypeID: 1, text: 'Max = B', connectBlocks: [3, 1] },
+      { id: 9, blockTypeID: 1, text: 'Max = C', connectBlocks: [3, 2] },
+      { id: 10, blockTypeID: 7, text: 'Xuất Max', connectBlocks: [] },
+      { id: 11, blockTypeID: 12, text: 'Kết thúc', connectBlocks: [3, 0, 1, 2] },
+    ],
+    testCases: [
+      {
+        testCaseTypeID: 0,
+        text: 'A = 1\nB = 2\nC = 3',
+        casePairs: [
+          { value: 1, variableBlockIndex: 0 },
+          { value: 2, variableBlockIndex: 1 },
+          { value: 3, variableBlockIndex: 2 },
+        ],
+      },
+      {
+        testCaseTypeID: 0,
+        text: 'A = 5\nB = 2\nC = 4',
+        casePairs: [
+          { value: 5, variableBlockIndex: 0 },
+          { value: 2, variableBlockIndex: 1 },
+          { value: 4, variableBlockIndex: 2 },
+        ],
+      },
+      {
+        testCaseTypeID: 0,
+        text: 'A = 2\nB = 7\nC = 1',
+        casePairs: [
+          { value: 2, variableBlockIndex: 0 },
+          { value: 7, variableBlockIndex: 1 },
+          { value: 1, variableBlockIndex: 2 },
+        ],
+      },
+    ],
+    validateURL:
+      'https://flow-chart-game-server.vercel.app/gameplay/validate/max-abc',
+  },
 ];
 
 export { levelsData, LevelData };
