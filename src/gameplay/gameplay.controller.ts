@@ -40,7 +40,7 @@ export class GameplayController {
 
   @Post('validate/min-abc')
   validateMinABC(@Body() dto: DTO_ValidateMaxMinABC) {
-    return this.service.validateMaxABC(
+    return this.service.validateMinABC(
       parseInt(dto.key1),
       parseInt(dto.key2),
       parseInt(dto.key3),
