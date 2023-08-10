@@ -83,6 +83,6 @@ export class GameplayController {
 
   @Post('validate/fibonacci')
   validateFibonacci(@Body() dto: DTO_ValidateFibonacci) {
-    return this.service.validateEqualAB(parseInt(dto.key1), parseInt(dto.key2));
+    return this.service.validateFibonacci(parseInt(dto.key1), parseInt(dto.key2));
   }
 }

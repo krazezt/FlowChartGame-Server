@@ -5,7 +5,9 @@ import { levelsData } from './data/levels.data';
 export class GameplayService {
   getRandomLevel(except: number) {
     let index: number = this.getRandomInt(0, levelsData.length - 1);
-    if (except === -1) return levelsData[index];
+    if (except === -1)
+      return levelsData[index];
+      // return levelsData[7];
     else
       while (index === except) {
         index = this.getRandomInt(0, levelsData.length - 1);
@@ -52,13 +54,15 @@ export class GameplayService {
     let x1: number = 0,
       x2: number = 1,
       y: number = 1;
-    while (y < key1) {
+    while (y <= key1) {
       y = x1 + x2;
       x1 = x2;
       x2 = y;
     }
-    
-    return (Math.round(y) === key2);
+
+    console.log({ key1, key2, y });
+
+    return Math.round(y) === key2;
   }
 
   validateUCLNAB(key1: number, key2: number, key3: number) {
