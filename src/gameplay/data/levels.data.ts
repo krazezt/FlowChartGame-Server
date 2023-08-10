@@ -654,7 +654,7 @@ const levelsData: LevelData[] = [
         text: 'A > B',
         connectBlocks: [0, 1],
       },
-      { id: 7, blockTypeID: 13, text: 'Y = X1 + X2', connectBlocks: [0] },
+      { id: 7, blockTypeID: 8, text: 'Y = X1 + X2', connectBlocks: [1, 2, 3] },
       { id: 8, blockTypeID: 1, text: 'X1 = X2', connectBlocks: [1, 2] },
       { id: 8, blockTypeID: 1, text: 'X2 = Y', connectBlocks: [2, 3] },
       { id: 9, blockTypeID: 7, text: 'Xuất Y', connectBlocks: [] },
