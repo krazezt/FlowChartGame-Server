@@ -6,7 +6,7 @@ export class GameplayService {
   getRandomLevel(except: number) {
     let index: number = this.getRandomInt(0, levelsData.length - 1);
     if (except === -1)
-      return levelsData[index];
+      return levelsData[index]; 
       // return levelsData[8];
     else
       while (index === except) {
