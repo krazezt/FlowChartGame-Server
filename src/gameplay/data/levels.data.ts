@@ -607,6 +607,82 @@ const levelsData: LevelData[] = [
     validateURL:
       'https://flow-chart-game-server.vercel.app/gameplay/validate/ucln-ab',
   },
+  {
+    request:
+      'Cho số A, tìm số Fibonacci có giá trị nhỏ nhất và lớn hơn A, gán giá trị đó cho Y',
+    index: 7,
+    variables: [
+      {
+        variableTypeID: 0,
+        variableName: 'A',
+      },
+      {
+        variableTypeID: 0,
+        variableName: 'X1',
+      },
+      {
+        variableTypeID: 0,
+        variableName: 'X2',
+      },
+      {
+        variableTypeID: 0,
+        variableName: 'Y',
+      },
+    ],
+    functionBlocks: [
+      {
+        id: 3,
+        blockTypeID: 0,
+        text: 'Bắt đầu',
+        connectBlocks: [],
+      },
+      {
+        id: 4,
+        blockTypeID: 7,
+        text: 'Nhập A',
+        connectBlocks: [],
+      },
+      {
+        id: 5,
+        blockTypeID: 3,
+        text: 'Y < A',
+        connectBlocks: [3, 0],
+      },
+      {
+        id: 6,
+        blockTypeID: 5,
+        text: 'A > B',
+        connectBlocks: [0, 1],
+      },
+      { id: 7, blockTypeID: 13, text: 'Y = X1 + X2', connectBlocks: [0] },
+      { id: 8, blockTypeID: 1, text: 'X1 = X2', connectBlocks: [1, 2] },
+      { id: 8, blockTypeID: 1, text: 'X2 = Y', connectBlocks: [2, 3] },
+      { id: 9, blockTypeID: 7, text: 'Xuất Y', connectBlocks: [] },
+      { id: 10, blockTypeID: 12, text: 'Kết thúc', connectBlocks: [3, 0] },
+    ],
+    testCases: [
+      {
+        testCaseTypeID: 0,
+        text: 'A = 5',
+        casePairs: [
+          { value: 5, variableBlockIndex: 0 },
+          { value: 0, variableBlockIndex: 1 },
+          { value: 1, variableBlockIndex: 2 },
+        ],
+      },
+      {
+        testCaseTypeID: 0,
+        text: 'A = 10',
+        casePairs: [
+          { value: 10, variableBlockIndex: 0 },
+          { value: 0, variableBlockIndex: 1 },
+          { value: 1, variableBlockIndex: 2 },
+        ],
+      },
+    ],
+    validateURL:
+      'https://flow-chart-game-server.vercel.app/gameplay/validate/equal-ab',
+  },
 ];
 
 export { levelsData, LevelData };
