@@ -56,6 +56,16 @@ class DTO_ValidateEqualAB {
   key2: string;
 }
 
+class DTO_ValidateFibonacci {
+  @IsNotEmpty()
+  @IsString()
+  key1: string;
+
+  @IsNotEmpty()
+  @IsString()
+  key2: string;
+}
+
 class RandomLevelDTO {
   except: string;
 }
@@ -66,4 +76,5 @@ export {
   DTO_ValidateUCLNAB,
   RandomLevelDTO,
   DTO_ValidateEqualAB,
+  DTO_ValidateFibonacci
 };

@@ -2,6 +2,7 @@ import { Controller, Post, Body } from '@nestjs/common';
 import { GameplayService } from './gameplay.service';
 import {
   DTO_ValidateEqualAB,
+  DTO_ValidateFibonacci,
   DTO_ValidateMaxMinAB,
   DTO_ValidateMaxMinABC,
   DTO_ValidateUCLNAB,
@@ -77,6 +78,11 @@ export class GameplayController {
 
   @Post('validate/equal-ab')
   validateEqualAB(@Body() dto: DTO_ValidateEqualAB) {
+    return this.service.validateEqualAB(parseInt(dto.key1), parseInt(dto.key2));
+  }
+
+  @Post('validate/fibonacci')
+  validateFibonacci(@Body() dto: DTO_ValidateFibonacci) {
     return this.service.validateEqualAB(parseInt(dto.key1), parseInt(dto.key2));
   }
 }

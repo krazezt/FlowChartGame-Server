@@ -681,7 +681,7 @@ const levelsData: LevelData[] = [
       },
     ],
     validateURL:
-      'https://flow-chart-game-server.vercel.app/gameplay/validate/equal-ab',
+      'https://flow-chart-game-server.vercel.app/gameplay/validate/fibonacci',
   },
 ];
 

@@ -48,6 +48,19 @@ export class GameplayService {
     return key1 === key2;
   }
 
+  validateFibonacci(key1: number, key2: number) {
+    let x1: number = 0,
+      x2: number = 1,
+      y: number = 1;
+    while (y < key1) {
+      y = x1 + x2;
+      x1 = x2;
+      x2 = y;
+    }
+    
+    return (Math.round(y) === key2);
+  }
+
   validateUCLNAB(key1: number, key2: number, key3: number) {
     const min = key1 < key2 ? key1 : key2;
     let ucln = 1;
