@@ -7,6 +7,7 @@ type LevelData = {
     blockTypeID: number;
     text: string;
     connectBlocks: number[];
+    values?: number[];
   }[];
   testCases: {
     testCaseTypeID: number;
@@ -675,7 +676,62 @@ const levelsData: LevelData[] = [
       },
     ],
     validateURL:
-      'https://flow-chart-game-server.vercel.app/gameplay/fibonacci',
+      'https://flow-chart-game-server.vercel.app/gameplay/validate/fibonacci',
+  },
+  {
+    request:
+      'Cho số X, xuất ra màn hình tương ứng với giá trị của X theo cặp: 1 - "Xanh", 2 - "Đỏ", 3 - "Vàng"',
+    index: 8,
+    variables: [
+      {
+        variableTypeID: 0,
+        variableName: 'X',
+      },
+    ],
+    functionBlocks: [
+      {
+        id: 1,
+        blockTypeID: 0,
+        text: 'Bắt đầu',
+        connectBlocks: [],
+      },
+      {
+        id: 2,
+        blockTypeID: 7,
+        text: 'Nhập A',
+        connectBlocks: [],
+      },
+      {
+        id: 3,
+        blockTypeID: 15,
+        text: 'A',
+        connectBlocks: [0],
+        values: [1, 2, 3],
+      },
+      { id: 6, blockTypeID: 7, text: '"Xanh"', connectBlocks: [] },
+      { id: 7, blockTypeID: 7, text: '"Đỏ"', connectBlocks: [] },
+      { id: 8, blockTypeID: 7, text: '"Vàng', connectBlocks: [] },
+      { id: 9, blockTypeID: 12, text: 'Kết thúc', connectBlocks: [3, 0] },
+    ],
+    testCases: [
+      {
+        testCaseTypeID: 0,
+        text: 'A = 1',
+        casePairs: [{ value: 1, variableBlockIndex: 0 }],
+      },
+      {
+        testCaseTypeID: 0,
+        text: 'A = 2',
+        casePairs: [{ value: 2, variableBlockIndex: 0 }],
+      },
+      {
+        testCaseTypeID: 0,
+        text: 'A = 3',
+        casePairs: [{ value: 3, variableBlockIndex: 0 }],
+      },
+    ],
+    validateURL:
+      'https://flow-chart-game-server.vercel.app/validate/switch-case',
   },
 ];
 
