@@ -92,6 +92,8 @@ export class GameplayController {
 
   @Post('validate/switch-case')
   validateSwitchCase(@Body() dto: DTO_ValidateSwitchCase) {
-    return parseInt(dto.key1) === Math.round(parseInt(dto.key2) - 3);
+    let intKey1 = parseInt(dto.key1);
+    let intKey2 = parseInt(dto.key2);
+    return intKey1 === Math.round(intKey2 - 3);
   }
 }
